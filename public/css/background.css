@@ -1,0 +1,75 @@
+#home {
+    margin: 40px;
+    background-image: url(../images/lumen.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed, scroll;
+    color: #444;
+}
+#home_tips {
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 25px;
+    font-size: 16px;
+    color: #4d004c;
+    line-height: 2;
+}
+.tips-img
+{
+    width: 250px;
+    height: 250px;
+    vertical-align: middle;
+}
+.tips-list {
+    float: right;
+    display: inline;
+}
+.title-img{
+
+    vertical-align: middle;
+}
+.title-list{
+    float: left;
+    display: inline;
+}
+#home_content {
+    height: 135px;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    padding: 0 20%;
+}
+#about_me {
+    margin: 40px;
+    background-color: #F8AD30;
+    background-image: url(../images/cats/ChainsawCat.jpg);
+    background-size: auto;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-attachment: fixed, scroll;
+    color: #444;
+}
+.about_me {
+    margin-left: -95%;
+    font-size: 24px;
+}
+.article {
+    padding-top: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+    line-height: 2;
+    letter-spacing: 1px;
+    text-indent: 2em;
+}
+button{
+    background: linear-gradient(to bottom, #4eb5e5 0%,#389ed5 100%);
+    border-radius: 5px;
+    position: relative;
+    border-bottom: 4px solid #2b8bc6;
+    color: #fbfbfb;
+    font-family: 'Open Sans', sans-serif;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.4);
+    cursor: pointer;
+}
