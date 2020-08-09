@@ -15,7 +15,8 @@
       return view('welcome');
 });*/
 
-Auth::routes();//Auth系统自动注入的路由配置
+//Auth系统自动注入的路由配置 resource/views/auth/register.blade.php页取消了注册功能，可按需求打开
+Auth::routes();
 
 //首页 GET方法访问 域名/路由 的时候，调用HomeController控制器index方法
 Route::get('/', 'HomeController@index')->name('home');//->name('')命名路由，可不写

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Redis;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request;use Illuminate\Support\Facades\DB;
 use App\Article;
 
 class HomeController extends Controller
@@ -22,11 +22,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    //首页
+    //首页，带分页功能
     public function index()
     {
         //返回home视图并加载Article模型，使用绝对命名空间法加载Article类，->withFooBar(100) = ->with('foo_bar', 100)
-        return view('home')->withArticles(\App\Article::all());
+        //return view('home')->withArticles(\App\Article::all());
+        $articles = DB::table('articles')->paginate(8);
+        return view('home', ['articles' => $articles]);
     }
 
     public function about()

@@ -62,6 +62,7 @@
                 </div>
             </li>
         @endforeach
+            {{ $articles->links() }}<!--分页链接-->
     </ul>
 </div>
 

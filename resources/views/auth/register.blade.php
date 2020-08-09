@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('/register') }}"><!--用斜杠注释注册路由，限定已注册用户才能注册新账户，可取消-->
                         @csrf
 
                         <div class="form-group row">
