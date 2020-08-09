@@ -9,7 +9,7 @@
     <link href="{{ url('/css/background.css') }}" rel="stylesheet" type="text/css">
     <link rel="icon" sizes="48x48" href="{{ url('/images/favicon.jpg') }}">
 </head>
-<body>
+<body class="article-img">
 <div id="content" style="padding: 50px;">
 
     <h3><a href="/"><button>< Back</button></a></h3>
