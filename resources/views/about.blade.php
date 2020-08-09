@@ -73,7 +73,7 @@
         I was born in a small town in China, I spent my childhood there. My current occupation is a programmer.
     </p>
     <p>
-        It came to me in a flash of inspiration, Then I wrote this website about slugs.
+        It came to me in a flash of inspiration, Then I wrote this website with slugs as mascots.
         If they don’t live in my vegetables, sometimes they are cute.
     </p>
     <br />
