@@ -32,7 +32,7 @@ class ArticleController extends Controller
     {
         $this->validate($request, [
             //必填：在articles表中唯一、最大长度30
-            'title' => 'required|unique:articles|max:30',
+            'title' => 'required|unique:articles|max:60',
             'content' => 'required',//必填
         ]);
 
@@ -66,7 +66,7 @@ class ArticleController extends Controller
     {
         $this->validate($request, [
             //传入更新字段和ID
-            'title' => 'required|unique:articles,title,'.$id.'|max:30',
+            'title' => 'required|unique:articles,title,'.$id.'|max:60',
             'content' => 'required',
         ]);
 
