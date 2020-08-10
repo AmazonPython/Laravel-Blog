@@ -61,9 +61,11 @@
     line-height: 2;
     letter-spacing: 1px;
     text-indent: 2em;
+    font-size: 16px;
 }
 .article-img{
-    background-image: url(../images/BrownSlug.jpg);
+    background-color: lightyellow;
+    background-image: url(../images/BrownSlug.png);
     background-size: 25%;
     background-position: top right;
     background-repeat: no-repeat;
