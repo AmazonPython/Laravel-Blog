@@ -27,14 +27,6 @@ Route::post('comment', 'CommentController@store');
 //About me
 Route::get('about', 'HomeController@about');
 
-Route::get('/redis', function () { //Set router parameter and closure
-    $redis = new Redis(); //Initialization
-    $redis->connect('127.0.0.1', 6379); //Connect to local redis service
-
-    $redis->set("tutorial-name", "redis"); //Set redis string data
-    echo 'hello, '.$redis->get("tutorial-name"); //Get the stored data and output it
-});
-Route::get('test', 'HomeController@test');
 
 /**
  * 后台登录
