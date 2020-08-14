@@ -26,17 +26,17 @@ class HomeController extends Controller
             Cache::get('articles', $articles);
 
             $visits = Redis::incr('visits');
-            $data = 'This page has been viewed '.$visits.' times in today';
+            $data = 'This page has been viewed ' . $visits . ' times in today';
 
-            return $data.view('home', ['articles' => $articles]);
+            return view('home', ['articles' => $articles]) . $data;
         }else{
             $articles = DB::table('articles')->paginate(8);
             Cache::add('articles', $articles, $minutes = 1440);
 
             $visits = Redis::incr('visits');
-            $data = 'This page has been viewed '.$visits.' times in today';
+            $data = 'This page has been viewed ' . $visits . ' times in today';
 
-            return $data.view('home', ['articles' => $articles]);
+            return view('home', ['articles' => $articles]) . $data;
         }
     }
 
