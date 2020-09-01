@@ -28,6 +28,13 @@ class LoginController extends Controller
     protected $redirectTo = '/admin';
 
     /**
+     * Get the maximum number of attempts to allow.
+     *
+     * @return int
+     */
+    protected $maxAttempts = 3;
+
+    /**
      * Create a new controller instance.
      *
      * @return void

@@ -23,9 +23,7 @@
 
 <body id="about_me">
 <div id="title">
-    <h1 style="text-align: center;">
-        <img src="{{ url('/images/Rainbow.png') }}"> About me <img src="{{ url('/images/trans.png') }}">
-    </h1><hr>
+    <h1 style="text-align: center;">About me</h1><hr>
     <h3 style="padding-right: 50%;"><a href="/"><button>< Back</button></a></h3>
 </div>
 
@@ -67,7 +65,7 @@
 
 <div id="home_tips">
     <p>
-        Hi, everyone. This is Nova. Welcome to my zone, I hope my zone can bring you happy.
+        Hi, everyone. This is Nova, Welcome to my website. Hope my article brings you happiness.
     </p>
     <p>
         I was born in a small town in China, I spent my childhood there. My current occupation is a programmer.
@@ -86,7 +84,6 @@
 <script type="text/javascript" src="{{ url('/js/swiper.min.js') }}"></script>
 <script type="text/javascript">
     // cover flow是类似于苹果将多首歌曲的封面以3D界面的形式显示出来的方式。coverflow效果参数，可选值：
-
     // rotate：slide做3d旋转时Y轴的旋转角度。默认50。
     // stretch：每个slide之间的拉伸值，越大slide靠得越紧。 默认0。
     // depth：slide的位置深度。值越大z轴距离越远，看起来越小。 默认100。
