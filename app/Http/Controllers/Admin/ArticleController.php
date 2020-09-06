@@ -31,7 +31,7 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            //必填：在articles表中唯一、最大长度30
+            //必填：在articles表中唯一、最大长度60
             'title' => 'required|unique:articles|max:60',
             'content' => 'required',//必填
         ]);
