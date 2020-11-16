@@ -26,7 +26,7 @@ class HomeController extends Controller
             Cache::get('articles', $articles);
 
             $visits = Redis::incr('visits');
-            $data = 'This page has been viewed ' . $visits . ' times in today';
+            $data = 'This page has been viewed ' . $visits . ' times';
 
             return view('home', ['articles' => $articles]) . $data;
         }else{
@@ -34,7 +34,7 @@ class HomeController extends Controller
             Cache::add('articles', $articles, $minutes = 1440);
 
             $visits = Redis::incr('visits');
-            $data = 'This page has been viewed ' . $visits . ' times in today';
+            $data = 'This page has been viewed ' . $visits . ' times';
 
             return view('home', ['articles' => $articles]) . $data;
         }

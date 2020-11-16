@@ -23,10 +23,9 @@ Route::get('/', 'HomeController@index')->name('home');//->name('')命名路由�
 //文章详情页
 Route::get('/article/{id}', 'ArticleController@show');
 //发布评论
-Route::post('comment', 'CommentController@store');
+Route::post('/comment', 'CommentController@store');
 //About me
-Route::get('about', 'HomeController@about');
-
+Route::get('/about', 'HomeController@about');
 
 /**
  * 后台登录
@@ -39,7 +38,7 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin
 
     //后台文章页
     //配置资源路由得到7条路由配置，完成增删改查操作
-    Route::resource('articles', 'ArticleController');
+    Route::resource('/articles', 'ArticleController');
 
-    Route::resource('comments', 'CommentController');
+    Route::resource('/comments', 'CommentController');
 });
