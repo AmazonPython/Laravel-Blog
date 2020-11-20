@@ -52,7 +52,7 @@
                 <div class="title">
                     <img src="{{ url('/images/TitleSlug.png') }}" class="title-img title-list" width="128px" height="128px" alt="">
                     <span class="title-img">
-                    <a href="{{ url('article/'.$article->id) }}">
+                    <a href="{{ url('article/' . $article->id .'-'. str_replace(' ', '-', $article->title)) }}">
                         <h3>{{ $article->title }}</h3>
                     </a>
                     </span>
@@ -62,7 +62,7 @@
                 </div>
             </li>
         @endforeach
-            {{ $articles->links() }}<!--分页链接-->
+        {{ $articles->links() }}<!--分页链接-->
     </ul>
 </div>
 
