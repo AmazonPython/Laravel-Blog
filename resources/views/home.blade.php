@@ -13,6 +13,10 @@
 <body id="home">
 <div id="title" style="text-align: center;">
     <h1>Slugs want a hug</h1>
+    <form action="{{ route('search') }}" method="get">
+        <input name="search" type="text" class="btn" placeholder="Please input keywords" required/>
+        <button class="btn btn-info" type="submit">Go!</button>
+    </form>
     <a class="about_me" href="{{ url('/about') }}"><button>About me</button></a>
     <div id="home_tips">
         <p>
@@ -62,7 +66,7 @@
                 </div>
             </li>
         @endforeach
-        {{ $articles->links() }}<!--分页链接-->
+            {{ $articles->links() }}{{--分页链接--}}
     </ul>
 </div>
 
@@ -70,5 +74,7 @@
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{{--即时预加载--}}
+<script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
 </body>
 </html>

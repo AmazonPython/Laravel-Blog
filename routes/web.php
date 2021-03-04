@@ -24,6 +24,8 @@ Route::get('/', 'HomeController@index')->name('home');//->name('')命名路由�
 Route::get('/article/{id}', 'ArticleController@show');
 //发布评论
 Route::post('/comment', 'CommentController@store');
+//搜索
+Route::get('/search', 'ArticleController@search')->name('search');
 //About me
 Route::get('/about', 'HomeController@about');
 
