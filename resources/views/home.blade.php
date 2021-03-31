@@ -62,7 +62,7 @@
                     </span>
                 </div>
                 <div class="body">
-                    <p>{{ $article->content }}</p>
+                    <p>{!! $article->content !!}</p>
                 </div>
             </li>
         @endforeach

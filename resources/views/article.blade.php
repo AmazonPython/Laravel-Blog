@@ -21,7 +21,7 @@
     </div>
 
     <div id="content" style="margin: 20px;">
-        <p class="article">{{ $article->content }}</p>
+        <p class="article">{!! $article->content !!}</p>
     </div>
 
     <div id="comments" style="margin-top: 50px;">

@@ -22,7 +22,7 @@
                                 <h4>{{ $article->title }}</h4>
                                 <div class="content">
                                     <p>
-                                        {{ $article->content }}
+                                        {!! $article->content !!}
                                     </p>
                                 </div>
                             </div>

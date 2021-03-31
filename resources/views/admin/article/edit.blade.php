@@ -18,9 +18,11 @@
                         <form action="{{ url('admin/articles/'.$article->id) }}" method="POST">
                             {{ method_field('PATCH') }}
                             {{ csrf_field() }}
-                            <input type="text" name="title" class="form-control" required="required" placeholder="请输入标题">
+                            <input type="text" name="title" class="form-control" required="required" placeholder="请输入标题" value="{{ $article->title }}">
                             <br>
-                            <textarea name="content" rows="10" class="form-control" required="required" placeholder="请输入内容"></textarea>
+                            <textarea name="content" rows="10" class="form-control" required="required" placeholder="请输入内容">
+                                {!! $article->content !!}
+                            </textarea>
                             <br>
                             <button class="btn btn-lg btn-info">提交修改</button>
                         </form>
