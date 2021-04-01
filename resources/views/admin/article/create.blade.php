@@ -5,6 +5,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
+                    <h4><a href="{{ url('admin') }}"><< 返回后台管理首页</a></h4>
                     <div class="panel-heading">新增一篇文章</div>
                     <div class="panel-body">
 
@@ -21,7 +22,7 @@
                             <!--上行代码等同于<input type="hidden" name="_token" value="大括号大括号csrf_field()大括号大括号">-->
                             <input type="text" name="title" class="form-control" required="required" placeholder="请输入标题">
                             <br>
-                            <textarea name="content" rows="10" class="form-control" required="required" placeholder="请输入内容"></textarea>
+                            <textarea name="content" id="image-tools" rows="10" class="form-control" required="required" placeholder="请输入内容"></textarea>
                             <br>
                             <button class="btn btn-lg btn-info">新增文章</button>
                         </form>

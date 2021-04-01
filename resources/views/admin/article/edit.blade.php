@@ -5,6 +5,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
+                    <h4><a href="{{ url('admin') }}"><< 返回后台管理首页</a></h4>
                     <div class="panel-heading">编辑文章</div>
                     <div class="panel-body">
 
@@ -20,7 +21,7 @@
                             {{ csrf_field() }}
                             <input type="text" name="title" class="form-control" required="required" placeholder="请输入标题" value="{{ $article->title }}">
                             <br>
-                            <textarea name="content" rows="10" class="form-control" required="required" placeholder="请输入内容">
+                            <textarea name="content" id="image-tools" rows="10" class="form-control" required="required" placeholder="请输入内容">
                                 {!! $article->content !!}
                             </textarea>
                             <br>
