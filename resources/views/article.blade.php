@@ -12,7 +12,9 @@
 <body class="article-img">
 <div id="content" style="padding: 50px;">
 
-    <h3><a href="/"><button>< Back</button></a></h3>
+    <button class="btn-lg" onclick="history.go(-1)">
+        < Back
+    </button>
 
     <h1 style="text-align: center; margin-top: 50px;">{{ $article->title }}</h1><hr>
 

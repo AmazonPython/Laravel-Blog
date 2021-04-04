@@ -33,8 +33,9 @@
                                 {{ csrf_field() }}
                                 <button type="submit" class="btn btn-danger">删除</button>
                             </form>
-                            <hr>
                         @endforeach
+                            <hr>
+                            {{ $comments->links() }}{{--分页链接--}}
                     </div>
                 </div>
             </div>

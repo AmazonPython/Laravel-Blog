@@ -33,6 +33,8 @@
                                 <button type="submit" class="btn btn-danger">删除</button>
                             </form>
                         @endforeach
+                            <hr>
+                            {{ $articles->links() }}{{--分页链接--}}
                     </div>
                 </div>
             </div>

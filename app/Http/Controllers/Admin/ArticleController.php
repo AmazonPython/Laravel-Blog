@@ -17,8 +17,13 @@ class ArticleController extends Controller
     //显示文章后台管理页
     public function index()
     {
-        //withArticles(Article::all()); 加载Article模型
-        return view('admin/article/index')->withArticles(Article::all());
+        //return view('admin/article/index')->withArticles(Article::all());
+
+        $articles = Article::select('id', 'title', 'content')
+            ->orderBy('id', 'desc')
+            ->paginate(8);
+
+        return view('admin/article/index', compact('articles'));
     }
 
     //展示创建文章的表单

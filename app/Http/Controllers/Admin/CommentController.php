@@ -11,7 +11,11 @@ class CommentController extends Controller
     //后台评论列表首页
     public function index()
     {
-        return view('admin/comment/index')->withComments(Comment::all());
+        $comments = Comment::select('id', 'nickname', 'content', 'updated_at', 'article_id')
+            ->orderBy('updated_at', 'desc')
+            ->paginate(8);
+
+        return view('admin/comment/index', compact('comments'));
     }
 
     public function destroy($id)
