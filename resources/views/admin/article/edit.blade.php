@@ -19,9 +19,9 @@
                         <form action="{{ url('admin/articles/'.$article->id) }}" method="POST">
                             {{ method_field('PATCH') }}
                             {{ csrf_field() }}
-                            <input type="text" name="title" class="form-control" required="required" placeholder="请输入标题" value="{{ $article->title }}">
+                            <input type="text" name="title" class="form-control" value="{{ $article->title }}" required="required">
                             <br>
-                            <textarea name="content" id="image-tools" rows="10" class="form-control" required="required" placeholder="请输入内容">
+                            <textarea name="content" id="image-tools" rows="10" class="form-control" required="required">
                                 {!! $article->content !!}
                             </textarea>
                             <br>

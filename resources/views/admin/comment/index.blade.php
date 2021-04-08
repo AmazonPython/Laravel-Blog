@@ -28,13 +28,13 @@
                         </div>
                     </div>
 
-                            <form action="{{ url('admin/comments/'.$comment->id) }}" method="POST" style="display: inline;">
-                                {{ method_field('DELETE') }}
-                                {{ csrf_field() }}
-                                <button type="submit" class="btn btn-danger">删除</button>
-                            </form>
+                        <form action="{{ url('admin/comments/'.$comment->id) }}" method="POST" style="display: inline;">
+                            {{ method_field('DELETE') }}
+                            {{ csrf_field() }}
+                            <button type="submit" class="btn btn-danger">删除</button>
+                        </form>
                         @endforeach
-                            <hr>
+                        <hr>
                             {{ $comments->links() }}{{--分页链接--}}
                     </div>
                 </div>
