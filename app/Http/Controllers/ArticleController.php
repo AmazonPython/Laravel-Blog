@@ -9,7 +9,9 @@ class ArticleController extends Controller
 {
     public function show($id)
     {
-        return view('article')->withArticle(Article::with('hasManyComments')->find($id));
+        $article = Article::where('id', $id)->firstOrFail();
+
+        return view('article', compact('article'));
     }
 
     public function search(Request $request)
