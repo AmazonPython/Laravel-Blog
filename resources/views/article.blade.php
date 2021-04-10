@@ -11,10 +11,9 @@
 </head>
 <body class="article-img">
 <div id="content" style="padding: 50px;">
-
-    <button class="btn-lg" onclick="history.go(-1)">
-        < Back
-    </button>
+    <a href="{{ url('/') }}">
+        <button class="btn-lg">< Back</button>
+    </a>
 
     <h1 style="text-align: center; margin-top: 50px;">{{ $article->title }}</h1><hr>
 
@@ -26,70 +25,24 @@
         <p class="article">{!! $article->content !!}</p>
     </div>
 
-    <div id="comments" style="margin-top: 50px;">
+    {{-- 来必力City版安装代码 --}}
+    <div id="lv-container" data-id="city" data-uid="{{ env('LIVERE_UID') }}">
+        <script type="text/javascript">
+            (function(d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
 
-        @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <strong>Operation failed!</strong> Input does not meet the requirements.<br><br>
-                {!! implode('<br>', $errors->all()) !!}
-            </div>
-        @endif
+                if (typeof LivereTower === 'function') { return; }
 
-        <div id="new">
-            <form action="{{ url('comment') }}" method="POST">
-                {!! csrf_field() !!}
-                <input type="hidden" name="article_id" value="{{ $article->id }}">
-                <div class="form-group">
-                    <label>Nickname</label>
-                    <input type="text" name="nickname" class="form-control" style="width: 300px;" required="required">
-                </div>
-                <div class="form-group">
-                    <label>Email address</label>
-                    <input type="email" name="email" class="form-control" style="width: 300px;">
-                </div>
-                <div class="form-group">
-                    <label>Home page</label>
-                    <input type="text" name="website" class="form-control" style="width: 300px;">
-                </div>
-                <div class="form-group">
-                    <label>Content</label>
-                    <textarea name="content" id="newFormContent" class="form-control" rows="10" required="required"></textarea>
-                </div>
-                <button type="submit" class="btn btn-lg btn-success col-lg-12">Submit</button>
-            </form>
-        </div>
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
 
-        <script>
-            function reply(a) {
-                var nickname = a.parentNode.parentNode.firstChild.nextSibling.getAttribute('data');
-                var textArea = document.getElementById('newFormContent');
-                textArea.innerHTML = '@'+nickname+' ';
-            }
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
         </script>
-
-        <div class="comments" style="margin-top: 100px;">
-            @foreach ($article->hasManyComments as $comment)
-
-                <div class="one" style="border-top: solid 20px #efefef; padding: 5px 20px;">
-                    <div class="nickname" data="{{ $comment->nickname }}">
-                        <h3>{{ $comment->nickname }}</h3>
-                        <h6>{{ $comment->created_at }}</h6>
-                        <h6><a href="{{ ('http://' . $comment->website) }}">web: {{ $comment->website }}</a></h6>
-                    </div>
-
-                    <div class="content">
-                        <p style="padding: 20px;">
-                            {{ $comment->content }}
-                        </p>
-                    </div>
-
-                    <div class="reply" style="text-align: right; padding: 5px;">
-                        <a href="#new" onclick="reply(this);">Reply</a>
-                    </div>
-                </div>
-            @endforeach
-        </div>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
     </div>
+    {{-- City版安装代码已完成 --}}
 </div>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>

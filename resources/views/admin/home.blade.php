@@ -8,8 +8,12 @@
                     <div class="panel-heading">Learn Laravel 5 后台</div>
 
                     <div class="panel-body">
-                        <a href="{{ url('admin/articles') }}" class="btn btn-lg btn-success col-xs-12">管理文章</a>
-                        <a href="{{ url('admin/comments') }}" class="btn btn-lg btn-success col-xs-12">管理评论</a>
+                        <a href="{{ url('admin/articles') }}" class="btn btn-lg btn-success col-xs-12">
+                            管理文章
+                        </a>
+                        <a href="//www.livere.com/insight/communite" class="btn btn-lg btn-success col-xs-12" target="_blank">
+                            管理评论
+                        </a>
                     </div>
                 </div>
             </div>
