@@ -15,17 +15,20 @@
       return view('welcome');
 });*/
 
-//Auth系统自动注入的路由配置 resource/views/auth/register.blade.php页取消了注册功能，可按需求打开
-Auth::routes();
+//取消了注册功能，若有需求则用 Auth::routes() 代替以下三行代码
+Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('/login', 'Auth\LoginController@login');
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 //首页 GET方法访问 域名/路由 的时候，调用HomeController控制器index方法
 Route::get('/', 'HomeController@index')->name('home');//->name('')命名路由，可不写
+
 //文章详情页
 Route::get('/article/{id}', 'ArticleController@show');
-//发布评论
-Route::post('/comment', 'CommentController@store');
+
 //搜索
 Route::get('/search', 'ArticleController@search')->name('search');
+
 //About me
 Route::get('/about', 'HomeController@about');
 
@@ -41,6 +44,4 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin
     //后台文章页
     //配置资源路由得到7条路由配置，完成增删改查操作
     Route::resource('/articles', 'ArticleController');
-
-    Route::resource('/comments', 'CommentController');
 });
